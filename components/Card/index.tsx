@@ -31,7 +31,7 @@ export const Card = ({mouse: any}) => {
       });
     }
 
-  },[])
+  },[eyeBlink])
 
 
   const ListObjects = (props) => {
