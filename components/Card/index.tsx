@@ -6,7 +6,7 @@ import arrow from '../../styles/assets/angle-down.png'
 import Image from 'next/image'
 
 type types = {
-  item: string
+  item: any
   key: string
 }
 
@@ -41,11 +41,11 @@ export const Card = () => {
   },[eyeBlink])
 
 
-  const ListObjects = ({item, key} : types) => {
+  const ListObjects = (props : types) => {
 
 
     return(
-      <li key={key} className={styles.listElement}>{item}</li>
+      <li className={styles.listElement}>{props.item}</li>
     )
   }
 
