@@ -21,22 +21,29 @@ export const Card = () => {
     'Team player'
   ]
 
-  const getRandomInt = (max: number) => {
-    return Math.floor(Math.random() * max);
+  const getRandomInt = (min: number, max: number) => {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
   }
-  setInterval(() => {
-    const x = getRandomInt(30)
-    const y = getRandomInt(30)
-    const eye = document.querySelector('#eyeball') as HTMLInputElement;
-    const eyepoint = document.querySelector('#eyepoint')as HTMLInputElement;
-    eye.style.transform = `translateY(${y}px) translateX(${x}px)`;
-    eyepoint.style.transform = `translateY(${y/2}px) translateX(${x/2}px)`;
-  }, 5000);
+
+  if(eyeBlink) {
+    setInterval(() => {
+      const x = getRandomInt(-30, 30)
+      const y = getRandomInt(-30,30)
+      const z = getRandomInt(3,4)
+      const eye = document.querySelector('#eyeball') as HTMLInputElement;
+      const eyepoint = document.querySelector('#eyepoint')as HTMLInputElement;
+      eye.style.transform = `translateY(${y}px) translateX(${x}px)`;
+      eyepoint.style.transform = `translateY(${y/2}px) translateX(${x/2}px)`;
+      eyepoint.style.transform = `scale(${z/4})`;
+    }, 5000);
+  }
 
   
   useEffect(() => {
     setEyeBlink(false)
-    if(eyeBlink && typeof window === "object") {
+    if(!eyeBlink && typeof window === "object") {
       const eye = document.querySelector('#eyeball') as HTMLInputElement;
       const eyepoint = document.querySelector('#eyepoint')as HTMLInputElement;
       window.addEventListener('mousemove', (evt) => {
