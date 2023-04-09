@@ -1,5 +1,5 @@
 @use '../../styles/main'
-
+    
 .container
     width: 100%
     display: flex
@@ -15,7 +15,7 @@
     letter-spacing: .4rem
     z-index: 10
     font-size: 9rem
-    font-family: Beckman, sans-serif
+    font-family: 'Beckman', 'sans-serif'
     font-weight: 400
     +main.d
         font-size: 6rem
@@ -56,9 +56,9 @@
     position: relative
     overflow: hidden
     min-height: 7rem
-    -webkit-animation: blink 5s infinitee
+    animation: blink 5s infinite
+    -webkit-animation: blink 5s infinite
     -webkit-transform-origin: 50%
-    animation: blink 5s infinitee
     +main.d
         width: 30%
     +main.m
@@ -177,9 +177,9 @@
     color: #10A19D
 
 @keyframes marquee
-  0%
+    0%
     left: 100%
-  100%
+    100%
     left: -100%
 
 .arrow
@@ -200,3 +200,5 @@
     95%
         transform: translateY(-80%)
 
+
+    
