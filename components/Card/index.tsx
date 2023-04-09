@@ -5,7 +5,7 @@ import styles from './Card.module.sass'
 import arrow from '../../styles/assets/angle-down.png'
 import Image from 'next/image'
 
-export const Card = ({mouse: any}) => {
+export const Card = () => {
 
   const [eyeBlink, setEyeBlink] = useState(true);
 
@@ -26,19 +26,21 @@ export const Card = ({mouse: any}) => {
         const y = -(window.innerHeight / 2 - evt.pageY) / 80;
         const xp = -(window.innerWidth / 2 - evt.pageX) / 33.5;
         const yp = -(window.innerHeight / 2 - evt.pageY) / 100;
-        eye.style.transform = `translateY(${y > 140 ? 140 : y < -140 ? -140 : y}px) translateX(${x > 140 ? 140 : x < -140 ? -140 : x}px)`;
-        eyepoint.style.transform = `translateY(${yp}px) translateX(${xp}px)`;
+        if (eye && eyepoint) {
+          eye.style.transform = `translateY(${y > 140 ? 140 : y < -140 ? -140 : y}px) translateX(${x > 140 ? 140 : x < -140 ? -140 : x}px)`;
+          eyepoint.style.transform = `translateY(${yp}px) translateX(${xp}px)`;
+        }
       });
     }
 
   },[eyeBlink])
 
 
-  const ListObjects = (props) => {
+  const ListObjects = (item: string, key: string) => {
 
 
     return(
-      <li className={styles.listElement}>{props.item}</li>
+      <li key={key} className={styles.listElement}>{item}</li>
     )
   }
 
