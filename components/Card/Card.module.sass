@@ -21,7 +21,22 @@
         font-size: 6rem
         letter-spacing: .2rem
     +main.m
-        font-size: 2rem
+        font-size: 4rem
+
+.headerLastName
+    padding: 0px
+    margin: 0px
+    letter-spacing: .4rem
+    z-index: 10
+    font-size: 9rem
+    font-family: 'Beckman', 'sans-serif'
+    font-weight: 400
+    +main.d
+        font-size: 6rem
+        letter-spacing: .2rem
+    +main.m
+        margin-top: 10px
+        font-size: .8rem
 
 .animations
     width: 100%
@@ -31,6 +46,9 @@
     justify-content: center
     align-items: center
     flex-direction: column
+    +main.m
+        height: 60vh
+        width: 80%
 
 .firstRow
     display: flex
@@ -38,6 +56,8 @@
     justify-content: center
     flex-direction: row
     width: 100%
+    +main.m
+        flex-direction: column
     
 
 .eyeBox
@@ -62,7 +82,8 @@
     +main.d
         width: 30%
     +main.m
-        min-height: 30px
+        width: 50%
+        min-height: 60px
     &.eyeBlink
         animation: none
         box-shadow: none
@@ -114,8 +135,8 @@
     align-items: center
     +main.m
         top: -10px
-        height: 50px
-        width: 50px
+        height: 80px
+        width: 80px
         border: 3px solid #0f0f0f
 
 .eyePoint
@@ -151,8 +172,8 @@
         width: 70%
     +main.m
         margin: 10px 0px
-        width: 80%
-        min-height: 30px
+        width: 50%
+        min-height: 70px
 
 .list
     font-size: 1.8rem
@@ -164,12 +185,12 @@
     white-space: nowrap
     animation: marquee 30s linear infinite
     +main.m
-        font-size: 1rem
+        font-size: 2rem
 
 .listTwo
     animation-delay: 15s
     +main.m
-        animation-delay: 23s
+        display: none
 
 .listElement
     display: inline-block

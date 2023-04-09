@@ -73,7 +73,7 @@ export const Card = () => {
             {listGenerator}
           </ul>
         </div>
-        <h1 className={styles.header}>RAGANKIEWICZ</h1>
+        <h1 className={styles.headerLastName}>RAGANKIEWICZ</h1>
         <span className={styles.arrow}>
           <Image
             src={arrow}
