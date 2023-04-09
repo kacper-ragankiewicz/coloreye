@@ -5,6 +5,11 @@ import styles from './Card.module.sass'
 import arrow from '../../styles/assets/angle-down.png'
 import Image from 'next/image'
 
+type types = {
+  item: string
+  key: string
+}
+
 export const Card = () => {
 
   const [eyeBlink, setEyeBlink] = useState(true);
@@ -19,8 +24,8 @@ export const Card = () => {
   useEffect(() => {
     setEyeBlink(false)
     if(eyeBlink) {
-      const eye = document.querySelector('#eyeball');
-      const eyepoint = document.querySelector('#eyepoint');
+      const eye = document.querySelector('#eyeball') as HTMLInputElement;
+      const eyepoint = document.querySelector('#eyepoint')as HTMLInputElement;
       window.addEventListener('mousemove', (evt) => {
         const x = -(window.innerWidth / 2 - evt.pageX) / 3.5;
         const y = -(window.innerHeight / 2 - evt.pageY) / 80;
@@ -36,7 +41,7 @@ export const Card = () => {
   },[eyeBlink])
 
 
-  const ListObjects = (item: string, key: string) => {
+  const ListObjects = ({item, key} : types) => {
 
 
     return(
