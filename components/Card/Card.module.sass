@@ -21,11 +21,14 @@
         font-size: 6rem
         letter-spacing: .2rem
     +main.m
-        font-size: 4rem
+        font-size: 7rem
 
 .headerLastName
     padding: 0px
     margin: 0px
+    display: flex
+    justify-content: center
+    align-items: center
     letter-spacing: .4rem
     z-index: 10
     font-size: 9rem
@@ -36,7 +39,7 @@
         letter-spacing: .2rem
     +main.m
         margin-top: 10px
-        font-size: .8rem
+        font-size: 1.4rem
 
 .animations
     width: 100%
@@ -76,14 +79,14 @@
     position: relative
     overflow: hidden
     min-height: 7rem
-    animation: blink 5s infinite
     -webkit-animation: blink 5s infinite
+    animation: blink 5s infinite
     -webkit-transform-origin: 50%
     +main.d
         width: 30%
     +main.m
-        width: 50%
-        min-height: 60px
+        width: 80%
+        min-height: 90px
     &.eyeBlink
         animation: none
         box-shadow: none
@@ -121,6 +124,7 @@
 
 
 .eyeBall
+    overflow: hidden
     z-index: 10
     border: 7px solid #0f0f0f
     top: -60px
@@ -133,10 +137,14 @@
     display: flex
     justify-content: center
     align-items: center
+    +main.d
+        height: 160px
+        width: 160px
+        top: -30px
     +main.m
         top: -10px
-        height: 80px
-        width: 80px
+        height: 120px
+        width: 120px
         border: 3px solid #0f0f0f
 
 .eyePoint
@@ -150,11 +158,14 @@
     -webkit-box-shadow: 0px 0px 60px 6px rgba(66, 68, 90, 1)
     -moz-box-shadow: 0px 0px 60px 6px rgba(66, 68, 90, 1)
     box-shadow: 0px 0px 60px 6px rgba(66, 68, 90, 1)
+    +main.d
+        width: 60%
+        height: 60%
     +main.m
-        border: 1px solid #ff6f00dc
+        border: 7px solid #ff6f00dc
         -webkit-box-shadow: 0px 0px 12px 6px #42445a6b
         -moz-box-shadow: 0px 0px 12px 6px #42445a6b
-        box-shadow: 0px 0px 12px 6px #42445a6b
+        box-shadow: 0px 0px 12px 12px #42445a6b
 
 .slider
     width: 100%
@@ -172,8 +183,8 @@
         width: 70%
     +main.m
         margin: 10px 0px
-        width: 50%
-        min-height: 70px
+        width: 80%
+        min-height: 90px
 
 .list
     font-size: 1.8rem
@@ -185,7 +196,7 @@
     white-space: nowrap
     animation: marquee 30s linear infinite
     +main.m
-        font-size: 2rem
+        font-size: 2.5rem
 
 .listTwo
     animation-delay: 15s

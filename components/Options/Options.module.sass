@@ -1,13 +1,16 @@
 .container
     display: flex
+    max-width: 1100px
     justify-content: center
+    align-items: center
     height: 50vh
+    text-align: center
 
 .list
     list-style-type: none
     margin: 0
     padding: 0
-    width: 80%
+    width: 100%
     display: flex
     justify-content: center
     flex-direction: column
@@ -15,9 +18,33 @@
     height: 40vh
 
 .list li
+    cursor: pointer
     width: 100%
     display: flex
     justify-content: center
     margin-bottom: 10px
     font-size: 4.3rem
     padding: 0
+    transition: .2s
+    &:hover
+        background: #ffffff52
+
+.containerProjects
+    transition: transform .2s ease
+    min-height: 20vh
+    width: 100vw
+    background: #0d8884
+    // border-top: 2px solid #000
+    // border-bottom: 2px solid #000
+
+.itemContainer
+    width: 20%
+    height: 90%
+    background: #fff
+    border-radius: 15px
+    margin-left: 20px
+
+.itemHeader
+    background: #000
+    padding: 10px
+    border-radius: 15px 15px 0px 0px

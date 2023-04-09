@@ -21,14 +21,27 @@ export const Card = () => {
     'Team player'
   ]
 
+  const getRandomInt = (max: number) => {
+    return Math.floor(Math.random() * max);
+  }
+  setInterval(() => {
+    const x = getRandomInt(30)
+    const y = getRandomInt(30)
+    const eye = document.querySelector('#eyeball') as HTMLInputElement;
+    const eyepoint = document.querySelector('#eyepoint')as HTMLInputElement;
+    eye.style.transform = `translateY(${y}px) translateX(${x}px)`;
+    eyepoint.style.transform = `translateY(${y/2}px) translateX(${x/2}px)`;
+  }, 5000);
+
+  
   useEffect(() => {
     setEyeBlink(false)
-    if(eyeBlink) {
+    if(eyeBlink && typeof window === "object") {
       const eye = document.querySelector('#eyeball') as HTMLInputElement;
       const eyepoint = document.querySelector('#eyepoint')as HTMLInputElement;
       window.addEventListener('mousemove', (evt) => {
         const x = -(window.innerWidth / 2 - evt.pageX) / 3.5;
-        const y = -(window.innerHeight / 2 - evt.pageY) / 80;
+        const y = -(window.innerHeight / 2 - evt.pageY) / 60;
         const xp = -(window.innerWidth / 2 - evt.pageX) / 33.5;
         const yp = -(window.innerHeight / 2 - evt.pageY) / 100;
         if (eye && eyepoint) {
