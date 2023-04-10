@@ -19,6 +19,14 @@ export const Card = () => {
     'GRAPHIC Designer',
     'Problem Solver',
     'Strategic thinker',
+    'Team player',
+    'GRAPHIC Designer',
+    'Problem Solver',
+    'Strategic thinker',
+    'Team player',
+    'GRAPHIC Designer',
+    'Problem Solver',
+    'Strategic thinker',
     'Team player'
   ]
 
@@ -104,9 +112,6 @@ export const Card = () => {
         </div>
         <div className={styles.slider}>
           <ul className={styles.list}>
-            {listGenerator}
-          </ul>
-          <ul className={styles.listTwo}>
             {listGenerator}
           </ul>
         </div>

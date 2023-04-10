@@ -199,31 +199,34 @@
     display: inline-block
     // flex-direction: row
     left: 100%
-    width: auto
     position: absolute
     white-space: nowrap
-    animation: marquee 30s linear infinite
+    overflow: hidden
+    display: flex
+    width: 2500px
+    margin: 0 auto
+    animation: marquee 15s linear infinite
 
 .list
     @extend  %list
     +main.m
-        font-size: 2.5rem
-        animation: marqueeMobile 14s linear infinite
+        // font-size: 2.5rem
+        animation: marquee 15s linear infinite
 
-.listTwo
-    @extend  %list
-    animation-delay: 15s
-    +main.t
-        display: none
-    +main.m
-        display: flex
-        font-size: 2.5rem
-        animation: marqueeMobile 14s linear infinite
-        animation-delay: 7s
+// .listTwo
+//     @extend  %list
+//     animation-delay: 15s
+//     +main.t
+//         display: none
+//     +main.m
+//         display: flex
+//         font-size: 2.5rem
+//         animation: marquee 14s linear infinite
+//         animation-delay: 7s
 
 .listElement
     display: inline-block
-    padding: 0px 6%
+    padding: 0px 2%
     color: #10A19D
     position: relative
     +main.d
@@ -248,15 +251,10 @@
 
 @keyframes marquee
     0%
-        left: 100%
+        transform: translate3d(-1300px, 0, 0)
     100%
-        left: -100%
+        transform: translate3d(-2600px, 0, 0)
 
-@keyframes marqueeMobile
-    0%
-        left: 350%
-    100%
-        left: -350%
 
 .arrow
     position: absolute
