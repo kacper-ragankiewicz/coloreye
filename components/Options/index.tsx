@@ -50,7 +50,7 @@ export const Options = () => {
 
   const ProjectGenerator = (props: any) => {
 
-    const techList = props.tech.map(item => <li key={item}>{item}</li>)
+    const techList = props.tech.map((item: any) => <li key={item}>{item}</li>)
 
 
     return(
