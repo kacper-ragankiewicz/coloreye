@@ -4,7 +4,7 @@ export { Link };
 
 function Link({ href, children, ...props }) {
     return (
-        <NextLink href={href} target='blank'>
+        <NextLink href={href} target='_blank'>
                 {children}
         </NextLink>
     );

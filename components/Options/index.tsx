@@ -20,7 +20,6 @@ export const Options = () => {
     {
       name: 'ChipTree',
       desc: 'Interface for IOT',
-      link: 'https://chiptree.pl',
       tech: ['Next', 'Node', 'PostgreSQL', 'Firebase'],
       img: 'https://live.staticflickr.com/65535/52807396473_5b4889ae66_b.jpg',
       url: 'https://chiptree.pl'
@@ -28,30 +27,37 @@ export const Options = () => {
     {
       name: 'itCNTR',
       desc: 'Web Search for IT offerts',
-      link: 'https://chiptree.pl',
-      tech: ['Next', 'Node', 'PostgreSQL', 'Firebase'],
+      tech: ['React', 'Figma', 'SASS'],
       img: 'https://live.staticflickr.com/65535/52806945886_599d716bee_b.jpg',
       url: 'https://itcntr.com'
     },
     {
       name: 'AlgoCode',
       desc: 'Find the shortest path on PC',
-      link: 'https://chiptree.pl',
-      tech: ['Next', 'Node', 'PostgreSQL', 'Firebase'],
+      tech: ['React'],
       img: 'https://live.staticflickr.com/65535/52806391412_25298e8921_b.jpg',
       url: 'https://algocode.vercel.app/'
     },
     {
-      name: 'Amazingkidsacademy',
-      desc: 'Website for enterteiment company',
-      link: 'https://chiptree.pl',
-      tech: ['Next', 'Node', 'PostgreSQL', 'Firebase']
+      name: 'BudoMEX',
+      desc: 'Figma project for app',
+      tech: ['Figma'],
+      img: 'https://live.staticflickr.com/65535/52807932883_1ac8818d6e_b.jpg',
+      url: 'https://www.figma.com/file/4NKM599rUmcYLC3wxXiBRi/Budomex-(Copy)?t=7xOS1S5Ggpi0ga2R-6'
     },
     {
-      name: 'Amazingkidsacademy',
-      desc: 'Website for enterteiment company',
-      link: 'https://chiptree.pl',
-      tech: ['Next', 'Node', 'PostgreSQL', 'Firebase']
+      name: 'Paero',
+      desc: 'Figma project for app',
+      tech: ['Figma'],
+      img: 'https://live.staticflickr.com/65535/52806939632_4a923a1cf8_c.jpg',
+      url: 'https://www.figma.com/file/wbdHyQ1KsKTes7XhxtBHE5/Paero-(Copy)?t=7xOS1S5Ggpi0ga2R-6'
+    },
+    {
+      name: 'ComparePart',
+      desc: 'Figma project for app',
+      tech: ['Figma'],
+      img: 'https://live.staticflickr.com/65535/52807947260_65f663ff2a_b.jpg',
+      url: 'https://www.figma.com/file/TBbpnrYqUixFBt65ohNVx5/Findyourpart-(Copy)?t=7xOS1S5Ggpi0ga2R-6'
     },
   ]
 
@@ -64,7 +70,7 @@ export const Options = () => {
     return(
       
       <li key={props.key} className={styles.itemContainer}>
-        <Link href={props.url ? props.url : '#'}>
+        <Link className={styles.link} href={props.url ? props.url : '#'}>
           <div className={styles.headerContainer}>
             <h2 className={styles.itemHeader}>{props.name}</h2>
             <p className={styles.itemDescription}>{props.desc}</p>

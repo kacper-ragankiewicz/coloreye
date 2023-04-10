@@ -66,7 +66,6 @@
     cursor: pointer
     width: 60%
     height: 70%
-    min-width: 300px
     background: #ffffff
     display: flex
     align-items: center
@@ -81,9 +80,11 @@
         min-width: 300px
     &:hover
         .projectImage
-            filter: none
+            filter: grayscale(100%) blur(10px)
 
-
+.itemContainer a
+    width: 100%
+    height: 100%
 
 .headerContainer
     display: flex
@@ -94,25 +95,19 @@
     flex-direction: column
     position: relative
     z-index: 2
-    &:hover
-        -webkit-backdrop-filter: none
-        backdrop-filter: none
-    +main.m
-        -webkit-backdrop-filter: none
-        backdrop-filter: none
 
 .itemHeader
     background: #000000
     color: #ffffff
     padding: 10px
+    width: 70%
     z-index: 10
     font-size: 2rem
-    width: 90%
     position: relative
     margin: 0px
     margin-bottom: 0px
-    margin-left: -2%
     border-radius: 15px 15px 15px 15px
+    min-width: 200px
     +main.m
         font-size: 2rem
         width: 75%
@@ -120,7 +115,7 @@
 .itemDescription
     z-index: 1
     position: relative
-    width: 80%
+    width: auto
     background: #FF7000
     border-radius: 15px
     color: #000
@@ -154,6 +149,9 @@
     width: 100%
     position: relative
     padding: 0px 2%
+    +main.m
+        flex-wrap: wrap
+        width: 90%
 
 .techList li
     color: #000
@@ -181,9 +179,10 @@
     height: 100%
     top: -10px
     left: -10px
+    transition: transform .4s ease
     transform: rotate(20deg)
     scale: 1.8
-    filter: grayscale(100%)
+    filter: blur(10px)
     +main.m
         scale: 1.4
 
