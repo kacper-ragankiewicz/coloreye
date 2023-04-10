@@ -1,10 +1,14 @@
+@use '../../styles/main'
+
 .container
     display: flex
     max-width: 1100px
+    width: 100%
     justify-content: center
     align-items: center
-    height: 50vh
+    height: auto
     text-align: center
+
 
 .list
     list-style-type: none
@@ -15,36 +19,160 @@
     justify-content: center
     flex-direction: column
     align-items: center
-    height: 40vh
 
-.list li
+.listELement
     cursor: pointer
-    width: 100%
     display: flex
     justify-content: center
     margin-bottom: 10px
     font-size: 4.3rem
     padding: 0
     transition: .2s
+    width: 100vw
     &:hover
         background: #ffffff52
+    &.active
+        width: 100vw
+        margin-bottom: 0px
+        color: #000
+        background: #fff
 
 .containerProjects
     transition: transform .2s ease
-    min-height: 20vh
+    height: 50vh
     width: 100vw
-    background: #0d8884
+    // background: #0d8884
+    list-style: none
+    margin-top: 0px
+    margin-bottom: 0px
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+    overflow: hidden
+    overflow-x: scroll
     // border-top: 2px solid #000
     // border-bottom: 2px solid #000
+    scroll-snap-type: x mandatory
+    +main.m
+        justify-content: left
+        margin: 0px
+        padding: 0px
 
 .itemContainer
-    width: 20%
-    height: 90%
-    background: #fff
+    cursor: pointer
+    width: 60%
+    height: 70%
+    min-width: 300px
+    background: #ffffff
+    display: flex
+    justify-content: center
+    align-items: center
     border-radius: 15px
     margin-left: 20px
+    position: relative
+    overflow: hidden
+    scroll-snap-stop: inherit
+
+
+
+.headerContainer
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 100%
+    width: 100%
+    flex-direction: column
+    position: relative
+    z-index: 2
+    backdrop-filter: blur(3px)
+    &:hover
+        backdrop-filter: none   
+    +main.m
+        backdrop-filter: none
 
 .itemHeader
-    background: #000
+    background: #000000
+    color: #ffffff
     padding: 10px
-    border-radius: 15px 15px 0px 0px
+    z-index: 10
+    font-size: 2rem
+    width: 90%
+    position: relative
+    margin: 0px
+    margin-bottom: 0px
+    margin-left: -2%
+    border-radius: 15px 15px 15px 15px
+    +main.m
+        font-size: 2rem
+        width: 75%
+
+.itemDescription
+    z-index: 1
+    position: relative
+    width: 80%
+    background: #FF7000
+    border-radius: 15px
+    color: #000
+    margin: 0px
+    margin-bottom: 10px
+    padding: 10px
+    padding-top: 20px
+    margin-top: -10px
+    +main.m
+        width: 65%
+
+.listHeader
+    padding: 10px
+    margin: 0px
+    font-size: 4rem
+    font-weight: 400
+
+.activeBox
+    display: flex
+    justify-content: center
+    align-items: center
+
+.techList
+    overflow: hidden
+    display: flex
+    justify-content: center
+    align-items: center
+    gap: .1rem
+    list-style: none
+    flex-direction: row
+    width: 100%
+    position: relative
+    padding: 0px 2%
+
+.techList li
+    color: #000
+    padding: 5px 10px
+    margin: 0px 10px 10px 0px
+    border-radius: 25px
+    background: #fff
+
+.openButtonContainer
+    display: flex
+    position: absolute
+    justify-content: end
+    align-items: flex-end
+    padding: 20px 30px
+    width: 100%
+    height: 60%
+
+.openButton
+    width: 50px
+    height: 50px
+
+.projectImage
+    position: absolute
+    width: 100%
+    height: 100%
+    top: 0
+    transform: rotate(20deg)
+    scale: 1.6
+    filter: grayscale(100%)
+    +main.m
+        scale: 1.4
+

@@ -12,7 +12,7 @@ type types = {
 
 export const Card = () => {
 
-  const [eyeBlink, setEyeBlink] = useState(true);
+  const [eyeBlink, setEyeBlink] = useState(false);
 
   const listArrey = [
     'GRAPHIC Designer',
@@ -27,23 +27,12 @@ export const Card = () => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
-  if(eyeBlink) {
-    setInterval(() => {
-      const x = getRandomInt(-30, 30)
-      const y = getRandomInt(-30,30)
-      const z = getRandomInt(3,4)
-      const eye = document.querySelector('#eyeball') as HTMLInputElement;
-      const eyepoint = document.querySelector('#eyepoint')as HTMLInputElement;
-      eye.style.transform = `translateY(${y}px) translateX(${x}px)`;
-      eyepoint.style.transform = `translateY(${y/2}px) translateX(${x/2}px)`;
-      eyepoint.style.transform = `scale(${z/4})`;
-    }, 5000);
-  }
-
+  
+  
   
   useEffect(() => {
     setEyeBlink(false)
-    if(!eyeBlink && typeof window === "object") {
+    // if(!eyeBlink && typeof window === "object") {
       const eye = document.querySelector('#eyeball') as HTMLInputElement;
       const eyepoint = document.querySelector('#eyepoint')as HTMLInputElement;
       window.addEventListener('mousemove', (evt) => {
@@ -56,21 +45,34 @@ export const Card = () => {
           eyepoint.style.transform = `translateY(${yp}px) translateX(${xp}px)`;
         }
       });
-    }
-
+    // }
+    
   },[eyeBlink])
-
-
-  const ListObjects = (props : types) => {
-
-
-    return(
-      <li className={styles.listElement}>{props.item}</li>
-    )
+  
+  if(!eyeBlink) {
+    setInterval(() => {
+      const x = getRandomInt(-30, 30)
+      const y = getRandomInt(-30,30)
+      const z = getRandomInt(3,4)
+      const eye = document.querySelector('#eyeball') as HTMLInputElement;
+      const eyepoint = document.querySelector('#eyepoint')as HTMLInputElement;
+      eye.style.transform = `translateY(${y}px) translateX(${x}px)`;
+      eyepoint.style.transform = `translateY(${y/2}px) translateX(${x/2}px)`;
+      eyepoint.style.transform = `scale(${z/4})`;
+      console.log(eyeBlink)
+    }, 5000);
   }
 
-
-  const listGenerator = listArrey.map(item => <ListObjects key={item} item={item}/>)
+  const ListObjects = (props : types) => {
+    
+    
+    return(
+      <li className={styles.listElement}>{props.item}</li>
+      )
+    }
+    
+    
+    const listGenerator = listArrey.map(item => <ListObjects key={item} item={item}/>)
 
   return (
     <div className={styles.container}>
