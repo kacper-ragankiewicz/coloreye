@@ -136,7 +136,7 @@ export const Options = () => {
                 <div className={styles.aboutContainer}>
                   <h3>Hi! My name is Kacper (as you know),</h3>
                   <p>
-                    I' am Software Developer, started as frontend dev. In programing, I valuable moust the effectiveness, not the code or style.
+                    I am Software Developer, started as frontend dev. In programing, I valuable moust the effectiveness, not the code or style.
                   </p>
 
                 </div>
