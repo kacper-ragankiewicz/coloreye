@@ -21,7 +21,7 @@ export const Options = () => {
       desc: 'Interface for IOT',
       link: 'https://chiptree.pl',
       tech: ['Next', 'Node', 'PostgreSQL', 'Firebase'],
-      img: '/../public/chiptree.png',
+      img: 'https://live.staticflickr.com/65535/52807396473_5b4889ae66_b.jpg',
       url: 'https://chiptree.pl'
     },
     {
@@ -29,7 +29,7 @@ export const Options = () => {
       desc: 'Web Search for IT offerts',
       link: 'https://chiptree.pl',
       tech: ['Next', 'Node', 'PostgreSQL', 'Firebase'],
-      img: '/../public/itcntr.png',
+      img: 'https://live.staticflickr.com/65535/52806945886_599d716bee_b.jpg',
       url: 'https://itcntr.com'
     },
     {
@@ -37,8 +37,14 @@ export const Options = () => {
       desc: 'Find the shortest path on PC',
       link: 'https://chiptree.pl',
       tech: ['Next', 'Node', 'PostgreSQL', 'Firebase'],
-      img: '/../public/algocode.png',
+      img: 'https://live.staticflickr.com/65535/52806391412_25298e8921_b.jpg',
       url: 'https://algocode.vercel.app/'
+    },
+    {
+      name: 'Amazingkidsacademy',
+      desc: 'Website for enterteiment company',
+      link: 'https://chiptree.pl',
+      tech: ['Next', 'Node', 'PostgreSQL', 'Firebase']
     },
     {
       name: 'Amazingkidsacademy',

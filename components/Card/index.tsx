@@ -47,21 +47,21 @@ export const Card = () => {
       });
     // }
     
+    if(!eyeBlink) {
+      setInterval(() => {
+        const x = getRandomInt(-30, 30)
+        const y = getRandomInt(-30,30)
+        const z = getRandomInt(3,4)
+        const eye = document.querySelector('#eyeball') as HTMLInputElement;
+        const eyepoint = document.querySelector('#eyepoint')as HTMLInputElement;
+        eye.style.transform = `translateY(${y}px) translateX(${x}px)`;
+        eyepoint.style.transform = `translateY(${y/2}px) translateX(${x/2}px)`;
+        eyepoint.style.transform = `scale(${z/4})`;
+        console.log(eyeBlink)
+      }, 2500);
+    }
   },[eyeBlink])
   
-  if(!eyeBlink) {
-    setInterval(() => {
-      const x = getRandomInt(-30, 30)
-      const y = getRandomInt(-30,30)
-      const z = getRandomInt(3,4)
-      const eye = document.querySelector('#eyeball') as HTMLInputElement;
-      const eyepoint = document.querySelector('#eyepoint')as HTMLInputElement;
-      eye.style.transform = `translateY(${y}px) translateX(${x}px)`;
-      eyepoint.style.transform = `translateY(${y/2}px) translateX(${x/2}px)`;
-      eyepoint.style.transform = `scale(${z/4})`;
-      console.log(eyeBlink)
-    }, 5000);
-  }
 
   const ListObjects = (props : types) => {
     
