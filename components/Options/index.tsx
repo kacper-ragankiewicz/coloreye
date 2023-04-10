@@ -1,13 +1,14 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './Options.module.sass'
 import cn from 'classnames'
 import Image from 'next/image';
 import { Link } from '../Link';
 import OutsideAlerter from '../Outside';
 
-import open from '../../styles/assets/exit.png'
-import chiptree from './../../styles/assets/chiptree.png'
-import itcntr from './../../styles/assets/itcntr.png'
+import copy from '../../styles/assets/copy.png'
+import twitter from '../../styles/assets/twitter.png'
+import facebook from '../../styles/assets/facebook.png'
+import linkedin from '../../styles/assets/linkedin.png'
 
 interface states {
   activeIndex: number;
@@ -15,6 +16,7 @@ interface states {
 
 export const Options = () => {
   const [active, setActive] = useState<states>({ activeIndex: 0})
+  const [saved, setSaved] = useState(false)
 
   const projectsArrey = [
     {
@@ -69,7 +71,7 @@ export const Options = () => {
     
     return(
       
-      <li key={props.key} className={styles.itemContainer}>
+      <li key={props.key} className={styles.itemContainer} onDragStart={(event)=> event.preventDefault()}>
         <Link className={styles.link} href={props.url ? props.url : '#'}>
           <div className={styles.headerContainer}>
             <h2 className={styles.itemHeader}>{props.name}</h2>
@@ -113,7 +115,12 @@ export const Options = () => {
     }, 100);
 
   }
-  
+
+  const Copy = () => {
+    setSaved(true)
+    navigator.clipboard.writeText('kasper.ragan@gmail.com')
+  }
+
   return (
     <div className={styles.container}>
       <OutsideAlerter
@@ -126,7 +133,13 @@ export const Options = () => {
             </div>
             <div className={styles.activeBox}>
               { active.activeIndex === 1 &&
-                <div>Hello</div>
+                <div className={styles.aboutContainer}>
+                  <h3>Hi! My name is Kacper (as you know),</h3>
+                  <p>
+                    I' am Software Developer, started as frontend dev. In programing, I valuable moust the effectiveness, not the code or style.
+                  </p>
+
+                </div>
               }
             </div>
             <div className={cn(styles.listELement, { [styles.active]: active.activeIndex === 2})} onClick={() => ScrollToBottom(2)}>
@@ -144,7 +157,58 @@ export const Options = () => {
             </div>
             <div className={styles.activeBox}>
               { active.activeIndex === 3 &&
-                <div>Hello</div>
+                <div className={styles.contactContainer}>
+                  <div className={styles.emailContainer}>
+                    <h3 className={styles.emailHeader}>email:</h3>
+                    <p className={styles.email}>kasper.ragan@gmail.com</p>
+                    {/* <button className={styles.copyButton} onClick={() => {navigator.clipboard.writeText('asas')}}>
+                      { saved ?
+                          'Copied!'
+                      :
+                        <Image
+                          src={copy}
+                          width={20}
+                          height={20}
+                          alt='CopyIMG'
+                          className={styles.copyImg}
+                        />
+
+                      }
+                    </button> */}
+                  </div>
+                  <div className={styles.socialmediaContainer}>
+                    <div className={styles.linkIcon}>
+                      <Link href='https://www.facebook.com/kacper.ragankiewicz' className={styles.linkIcon}>
+                        <Image
+                          src={facebook}
+                          width={30}
+                          height={30}
+                          alt='Facebook ICON'
+                          />
+                      </Link>
+                    </div>
+                    <div className={styles.linkIcon}>
+                      <Link href='https://twitter.com/Kacper_Ragan' className={styles.linkIcon}>
+                        <Image
+                          src={twitter}
+                          width={30}
+                          height={30}
+                          alt='Twitter ICON'
+                          />
+                      </Link>
+                    </div>
+                    <div className={styles.linkIcon}>
+                      <Link href='https://pl.linkedin.com/in/kacper-ragankiewicz-459a16255'>
+                        <Image
+                          src={linkedin}
+                          width={30}
+                          height={30}
+                          alt='LinkedIN ICON'
+                        />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
               }
             </div>
         </div>

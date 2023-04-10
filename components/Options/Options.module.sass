@@ -39,6 +39,10 @@
         color: #000
         background: #fff
 
+.aboutContainer
+    width: 60%
+    max-width: 600px
+
 .containerProjects
     transition: transform .2s ease
     height: 50vh
@@ -185,4 +189,46 @@
     filter: blur(10px)
     +main.m
         scale: 1.4
+
+.contactContainer
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: row
+    +main.m
+        flex-direction: column
+
+.emailContainer
+    display: flex
+
+.emailHeader
+    font-size: 2rem
+    +main.m
+        font-size: 1.2rem
+
+.email
+    font-size: 2rem
+    padding: 0px 10px
+    color: #FF7000
+    +main.m
+        font-size: 1.2rem
+
+.copyButton
+    cursor: pointer
+    display: flex
+    justify-content: center
+    align-items: center
+    background: #fff
+    padding: 2px 5px
+    border: none
+    border-radius: 15px
+
+.copyImg
+    scale: .5
+
+.socialmediaContainer
+    display: flex
+
+.linkIcon
+    padding: 10px
 

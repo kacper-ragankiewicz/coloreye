@@ -212,7 +212,10 @@
 .listTwo
     @extend  %list
     animation-delay: 15s
+    +main.t
+        display: none
     +main.m
+        display: flex
         font-size: 2.5rem
         animation: marqueeMobile 14s linear infinite
         animation-delay: 7s
@@ -225,7 +228,7 @@
     +main.d
         padding: 0px 2.6vw
     +main.t
-        padding: 0px 0.2vw
+        padding: 0px 5vw
     +main.m
         padding: 0px 3vw
     &:before
@@ -239,7 +242,7 @@
         left: -4px
         z-index: 100
         display: flex
-        +main.t
+        +main.m
             display: none
 
 @keyframes marquee
@@ -250,9 +253,9 @@
 
 @keyframes marqueeMobile
     0%
-        left: 300%
+        left: 350%
     100%
-        left: -300%
+        left: -350%
 
 .arrow
     position: absolute
