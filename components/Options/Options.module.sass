@@ -53,11 +53,12 @@
     overflow-x: scroll
     // border-top: 2px solid #000
     // border-bottom: 2px solid #000
-    scroll-snap-type: x mandatory
     +main.m
         justify-content: left
         margin: 0px
         padding: 0px
+        scroll-snap-align: start
+        scroll-snap-type: x mandatory
 
 .itemContainer
     cursor: pointer
@@ -72,9 +73,13 @@
     margin-left: 20px
     position: relative
     overflow: hidden
+    transition: transform 1.5s ease
     min-width: 400px
     +main.m
         min-width: 300px
+    &:hover
+        .projectImage
+            filter: none
 
 
 

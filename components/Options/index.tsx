@@ -3,6 +3,7 @@ import styles from './Options.module.sass'
 import cn from 'classnames'
 import Image from 'next/image';
 import { Link } from '../Link';
+import OutsideAlerter from '../Outside';
 
 import open from '../../styles/assets/exit.png'
 import chiptree from './../../styles/assets/chiptree.png'
@@ -58,7 +59,8 @@ export const Options = () => {
 
     const techList = props.tech.map((item: any) => <li key={item}>{item}</li>)
 
-
+    
+    
     return(
       
       <li key={props.key} className={styles.itemContainer}>
@@ -81,14 +83,14 @@ export const Options = () => {
             </div>
           {/* <div className={styles.openButtonContainer}>
             <button className={styles.openButton}>
-              <Image
-                src={open}
-                width={40}
-                height={40}
-                alt='Open IMG'
-                className={styles.openImg}
-                priority
-              />
+            <Image
+            src={open}
+            width={40}
+            height={40}
+            alt='Open IMG'
+            className={styles.openImg}
+            priority
+            />
             </button>
           </div> */}
         </Link>
@@ -96,11 +98,24 @@ export const Options = () => {
     )
   }
   const projectsList = projectsArrey.map(item => <ProjectGenerator key={item} {...item} />)
+  const ScrollToBottom = (activeIndex: number) => {
 
+    setActive({ activeIndex: activeIndex})
+
+    setTimeout(() => {
+      window.scrollTo(0, document.body.scrollHeight);
+    }, 100);
+
+  }
+  
   return (
     <div className={styles.container}>
+      <OutsideAlerter
+        state={active.activeIndex === 0 ? false : true}
+        change={() => setActive({ activeIndex: 0})}
+      >
         <div className={styles.list}>
-            <div className={cn(styles.listELement, { [styles.active]: active.activeIndex === 1})} onClick={() => setActive({ activeIndex: 1})}>
+            <div className={cn(styles.listELement, { [styles.active]: active.activeIndex === 1})} onClick={() => ScrollToBottom(1)}>
               <h4 className={styles.listHeader}>About</h4>
             </div>
             <div className={styles.activeBox}>
@@ -108,7 +123,7 @@ export const Options = () => {
                 <div>Hello</div>
               }
             </div>
-            <div className={cn(styles.listELement, { [styles.active]: active.activeIndex === 2})} onClick={() => setActive({ activeIndex: 2})}>
+            <div className={cn(styles.listELement, { [styles.active]: active.activeIndex === 2})} onClick={() => ScrollToBottom(2)}>
               <h4 className={styles.listHeader}>Portfolio</h4>
             </div>
             <div className={styles.activeBox}>
@@ -118,7 +133,7 @@ export const Options = () => {
                 </ul>
               }
             </div>
-            <div className={cn(styles.listELement, { [styles.active]: active.activeIndex === 3})} onClick={() => setActive({ activeIndex: 3})}>
+            <div className={cn(styles.listELement, { [styles.active]: active.activeIndex === 3})} onClick={() => ScrollToBottom(3)}>
               <h4 className={styles.listHeader}>Contact</h4>
             </div>
             <div className={styles.activeBox}>
@@ -127,6 +142,7 @@ export const Options = () => {
               }
             </div>
         </div>
+      </OutsideAlerter>
     </div>
   )
 }

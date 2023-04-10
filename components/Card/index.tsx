@@ -13,6 +13,7 @@ type types = {
 export const Card = () => {
 
   const [eyeBlink, setEyeBlink] = useState(false);
+  const [onBottom, setOnBottom] = useState(false);
 
   const listArrey = [
     'GRAPHIC Designer',
@@ -27,8 +28,15 @@ export const Card = () => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
-  
-  
+  const ScrollToBottom = () => {
+    setOnBottom(!onBottom)
+
+    if(!onBottom) {
+      window.scrollTo(0, document.body.scrollHeight);
+    } else {
+      window.scrollTo(0,0);
+    }
+  }
   
   useEffect(() => {
     setEyeBlink(false)
@@ -45,8 +53,7 @@ export const Card = () => {
           eyepoint.style.transform = `translateY(${yp}px) translateX(${xp}px)`;
         }
       });
-    // }
-    
+
     if(!eyeBlink) {
       setInterval(() => {
         const x = getRandomInt(-30, 30)
@@ -60,6 +67,14 @@ export const Card = () => {
         console.log(eyeBlink)
       }, 2500);
     }
+
+    window.addEventListener('scroll', () => {
+      if(document.documentElement.scrollTop > 150) {
+          setOnBottom(true)
+      } else {
+          setOnBottom(false)
+      }
+    });
   },[eyeBlink])
   
 
@@ -91,12 +106,12 @@ export const Card = () => {
           <ul className={styles.list}>
             {listGenerator}
           </ul>
-          <ul className={cn(styles.list, styles.listTwo)}>
+          <ul className={styles.listTwo}>
             {listGenerator}
           </ul>
         </div>
         <h1 className={styles.headerLastName}>RAGANKIEWICZ</h1>
-        <span className={styles.arrow}>
+        <span className={cn(styles.arrow, { [styles.onBottom]: onBottom})} onClick={() => ScrollToBottom()}>
           <Image
             src={arrow}
             width={59}
