@@ -49,7 +49,7 @@ export const Options = () => {
     },
     {
       name: 'CuriousGrog',
-      desc: 'More detail portf',
+      desc: 'More detail about me',
       tech: ['React', 'HTML5', 'SASS'],
       img: 'https://live.staticflickr.com/65535/52809874293_a5313ed5ea_b.jpg',
       url: 'https://curiousgrog.vercel.app/about'
