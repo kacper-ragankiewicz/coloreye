@@ -43,7 +43,7 @@ export const Options = () => {
     {
       name: 'AlgoCode',
       desc: 'Find the shortest path on PC',
-      tech: ['React', 'JSX'],
+      tech: ['React', 'JSX', 'CSS'],
       img: 'https://live.staticflickr.com/65535/52806391412_25298e8921_b.jpg',
       url: 'https://algocode.vercel.app/'
     },
