@@ -43,9 +43,23 @@ export const Options = () => {
     {
       name: 'AlgoCode',
       desc: 'Find the shortest path on PC',
-      tech: ['React'],
+      tech: ['React', 'JSX'],
       img: 'https://live.staticflickr.com/65535/52806391412_25298e8921_b.jpg',
       url: 'https://algocode.vercel.app/'
+    },
+    {
+      name: 'CuriousGrog',
+      desc: 'More detail portf',
+      tech: ['React', 'HTML5', 'SASS'],
+      img: 'https://live.staticflickr.com/65535/52809874293_a5313ed5ea_b.jpg',
+      url: 'https://curiousgrog.vercel.app/about'
+    },
+    {
+      name: 'Solar SYS',
+      desc: '3D Js animation',
+      tech: ['Vanilla', 'Three.js', 'Vite'],
+      img: 'https://live.staticflickr.com/65535/52809435791_cc85f600c0_c.jpg',
+      url: 'https://curiousgrog-vite.vercel.app'
     },
     {
       name: 'BudoMEX',
