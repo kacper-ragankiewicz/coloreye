@@ -27,6 +27,13 @@ export const Options = () => {
       url: 'https://chiptree.pl'
     },
     {
+      name: 'CT Store',
+      desc: 'One page shop',
+      tech: ['Next', 'Stripe', 'Sanity'],
+      img: 'https://live.staticflickr.com/65535/52808811412_9240128900_b.jpg',
+      url: 'https://store.chiptree.pl'
+    },
+    {
       name: 'itCNTR',
       desc: 'Web Search for IT offerts',
       tech: ['React', 'Figma', 'SASS'],
