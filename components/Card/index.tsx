@@ -72,7 +72,6 @@ export const Card = (props: any) => {
         }
       });
 
-
       setInterval(() => {
         const x = getRandomInt(-30, 30)
         const y = getRandomInt(-30,30)

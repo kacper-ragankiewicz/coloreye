@@ -28,6 +28,7 @@
         font-size: 7rem
     &.changeColor
         color: #000
+        animation: kacColor .4s linear
 
 .headerPer
     padding: 0px
@@ -45,6 +46,7 @@
     +main.m
         font-size: 7rem
     &.changeColor
+        animation: perColor .4s linear
         color: #000
 
 @keyframes kac
@@ -52,6 +54,14 @@
         transform: translate3d(100%, 0, 0)
 @keyframes per
     0%
+        transform: translate3d(-100%, 0, 0)
+@keyframes kacColor
+    0%
+        transform: translate3d(100%, 0, 0)
+        color: #FF7000
+@keyframes perColor
+    0%
+        color: #FF7000
         transform: translate3d(-100%, 0, 0)
 
 .headerLastName
@@ -74,12 +84,17 @@
         margin-top: 10px
         font-size: 1.4rem
     &.changeColor
+        animation: raganColor .4s linear
         color: #000
 
 @keyframes ragan
     0%
         transform: translate3d(0, -100%, 0)
-        color: #000
+        color: #10A19D
+@keyframes raganColor
+    0%
+        transform: translate3d(0, -100%, 0)
+        color: #FF7000
 
 
 .animations
@@ -108,11 +123,11 @@
 .eyeBox
     z-index: 1
     cursor: pointer
-    width: 100%
+    width: 40%
     background: #fff
     border-radius: 120px
     height: 13vh
-    margin: 10px
+    margin: 0px 5%
     transition: transform .3s ease
     -webkit-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1)
     -moz-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1)
@@ -126,21 +141,32 @@
     animation: blink 5s infinite
     -webkit-transform-origin: 50%
     +main.d
-        width: 35%
+        width: 30%
+        margin: 0px 2%
         height: 9vh
+        min-height: 90px
         max-height: 120px
     +main.m
         width: 80%
         max-width: 300px
-        min-height: 90px
     &.changeColor
-        background: #000
+        animation: blinkColor 3s infinite
+        background: #fff
         border-radius: 30%
         +main.d
             height: 6vh
 
 
 @keyframes blink
+    0%, 100%
+        transform: scale(1, .5)
+        border-top: 0px
+    5%,
+    95%
+        border-top: 10px solid #000
+        border-bottom: 5px solid #000
+        transform: scale(1, 1)
+@keyframes blinkColor
     0%, 100%
         transform: scale(1, .5)
         border-top: 0px
@@ -163,8 +189,16 @@
         background: #ff6f00
         border-bottom: 50px solid #000
         position: absolute
+        animation: blinkBrawColor 3s infinite
 
 @keyframes blinkBraw
+    0%, 100%
+        transform: translateY(0)
+        scale: 2
+    5%,
+    95%
+        transform: translateY(-80%)
+@keyframes blinkBrawColor
     0%, 100%
         transform: translateY(0)
         scale: 2
@@ -176,7 +210,7 @@
 .eyeBall
     overflow: hidden
     z-index: 10
-    border: 7px solid #0f0f0f
+    // border: 7px solid #0f0f0f
     top: -60px
     background: #FF7000
     height: 250px
@@ -195,13 +229,13 @@
         top: -10px
         height: 120px
         width: 120px
-        border: 3px solid #0f0f0f
+        // border: 3px solid #0f0f0f
     &.changeColor
         overflow: hidden
         z-index: 10
-        border: 7px solid #0f0f0f
+        // border: 7px solid #0f0f0f
         top: -60px
-        background: #FF7000
+        background: #10A19D
         height: 250px
         transition: transform .2s ease
         width: 250px
@@ -218,7 +252,7 @@
             top: -10px
             height: 120px
             width: 100px
-            border: 3px solid #fff
+            // border: 3px solid #fff
 
 .eyePoint
     background: #0e0e0e
@@ -242,6 +276,7 @@
         box-shadow: 0px 0px 12px 12px #42445a6b
     &.changeColor
         height: 90%
+        border: 10px solid #10A19D
 
 .slider
     z-index: 1
@@ -257,11 +292,13 @@
     min-height: 5rem
     overflow: hidden
     border-radius: 120px
+    animation: slideIn .3s linear
     +main.d
         width: 73%
         height: 9vh
         max-height: 120px
         min-width: 800px
+        animation: none
     +main.m
         margin: 10px 0px
         max-width: 300px
@@ -270,9 +307,19 @@
         min-width: 200px
     &.changeColor
         background: #fff
+        animation: slideInColor .3s linear
+
+@keyframes slideIn
+    0%
+        width: 0%
+        background: #10A19D
+@keyframes slideInColor
+    0%
+        width: 0%
+        background: #ff6f00
 
 %list
-    font-size: 1.8rem
+    font-size: 2.3rem
     // display: flex
     display: inline-block
     // flex-direction: row
