@@ -45,7 +45,19 @@ export const Card = (props: any) => {
       window.scrollTo(0,0);
     }
   }
-  
+
+  const ChangeColor = (state: boolean) => {
+    const body = document.querySelector('body');
+    props.onClick()
+    
+    if(body) {
+      if (!state) {
+        return body.style.backgroundColor = `#ff6f00`;
+      }
+      return body.style.backgroundColor = `#10A19D`;
+    }
+    return
+  }
   useEffect(() => {
       const eye = document.querySelector('#eyeball') as HTMLInputElement;
       const eyepoint = document.querySelector('#eyepoint')as HTMLInputElement;
@@ -98,7 +110,7 @@ export const Card = (props: any) => {
       <div className={styles.animations}>
         <div className={styles.firstRow}>
           <h1 className={cn(styles.headerKac, { [styles.changeColor]: props.state})}>KAC</h1>
-          <span id='eyebox' onClick={() => props.onClick()} className={cn(styles.eyeBox, { [styles.changeColor]: props.state})}>
+          <span id='eyebox' onClick={() => ChangeColor(props.state)} className={cn(styles.eyeBox, { [styles.changeColor]: props.state})}>
             <span id='eyebraw' className={cn(styles.eyeBraw, { [styles.changeColor]: props.state})}/>
             <span id='eyeball' className={cn(styles.eyeBall, { [styles.changeColor]: props.state})}>
               <span id='eyepoint' className={cn(styles.eyePoint, { [styles.changeColor]: props.state})}></span>

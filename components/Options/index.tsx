@@ -181,7 +181,7 @@ export const Options = (props: any) => {
                 <div className={styles.contactContainer}>
                   <div className={styles.emailContainer}>
                     <h3 className={styles.emailHeader}>email:</h3>
-                    <p className={styles.email}>kasper.ragan@gmail.com</p>
+                    <p className={cn(styles.email, { [styles.changeColor]: props.state})}>kasper.ragan@gmail.com</p>
                     {/* <button className={styles.copyButton} onClick={() => {navigator.clipboard.writeText('asas')}}>
                       { saved ?
                           'Copied!'
