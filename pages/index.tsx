@@ -10,12 +10,21 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
 
+  const [changeColor, setChangeColor] = useState(false);
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className='wrapper'>
-        <Card/>
-        <Options/>
-        <Footer/>
+        <Card
+          state={changeColor}
+          onClick={() => setChangeColor(!changeColor)}
+        />
+        <Options
+          state={changeColor}
+        />
+        <Footer
+          state={changeColor}
+        />
       </div>
     </main>
   )

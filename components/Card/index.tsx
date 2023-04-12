@@ -8,11 +8,11 @@ import Image from 'next/image'
 type types = {
   item: any
   key: string
+  state: boolean
 }
 
-export const Card = () => {
+export const Card = (props: any) => {
 
-  const [eyeBlink, setEyeBlink] = useState(false);
   const [onBottom, setOnBottom] = useState(false);
 
   const listArrey = [
@@ -47,8 +47,6 @@ export const Card = () => {
   }
   
   useEffect(() => {
-    setEyeBlink(false)
-    // if(!eyeBlink && typeof window === "object") {
       const eye = document.querySelector('#eyeball') as HTMLInputElement;
       const eyepoint = document.querySelector('#eyepoint')as HTMLInputElement;
       window.addEventListener('mousemove', (evt) => {
@@ -62,7 +60,7 @@ export const Card = () => {
         }
       });
 
-    if(!eyeBlink) {
+
       setInterval(() => {
         const x = getRandomInt(-30, 30)
         const y = getRandomInt(-30,30)
@@ -72,9 +70,7 @@ export const Card = () => {
         eye.style.transform = `translateY(${y}px) translateX(${x}px)`;
         eyepoint.style.transform = `translateY(${y/2}px) translateX(${x/2}px)`;
         eyepoint.style.transform = `scale(${z/4})`;
-        console.log(eyeBlink)
       }, 2500);
-    }
 
     window.addEventListener('scroll', () => {
       if(document.documentElement.scrollTop > 150) {
@@ -83,39 +79,39 @@ export const Card = () => {
           setOnBottom(false)
       }
     });
-  },[eyeBlink])
+  },[])
   
 
   const ListObjects = (props : types) => {
     
     
     return(
-      <li className={styles.listElement}>{props.item}</li>
+      <li className={cn(styles.listElement, { [styles.changeColor]: props.state})}>{props.item}</li>
       )
     }
     
     
-    const listGenerator = listArrey.map(item => <ListObjects key={item} item={item}/>)
+    const listGenerator = listArrey.map(item => <ListObjects key={item} item={item} state={props.state}/>)
 
   return (
-    <div className={styles.container}>
+    <div className={cn(styles.container, { [styles.changeColor]: props.state})}>
       <div className={styles.animations}>
         <div className={styles.firstRow}>
-          <h1 className={styles.header}>KAC</h1>
-          <span id='eyebox' onClick={() => setEyeBlink(!eyeBlink)} className={cn(styles.eyeBox, { [styles.eyeBlink]: eyeBlink})}>
-            <span id='eyebraw' className={cn(styles.eyeBraw, { [styles.eyeBlink]: eyeBlink})}/>
-            <span id='eyeball' className={styles.eyeBall}>
-              <span id='eyepoint' className={styles.eyePoint}></span>
+          <h1 className={cn(styles.headerKac, { [styles.changeColor]: props.state})}>KAC</h1>
+          <span id='eyebox' onClick={() => props.onClick()} className={cn(styles.eyeBox, { [styles.changeColor]: props.state})}>
+            <span id='eyebraw' className={cn(styles.eyeBraw, { [styles.changeColor]: props.state})}/>
+            <span id='eyeball' className={cn(styles.eyeBall, { [styles.changeColor]: props.state})}>
+              <span id='eyepoint' className={cn(styles.eyePoint, { [styles.changeColor]: props.state})}></span>
             </span>
           </span>
-          <h1 className={styles.header}>PER</h1>
+          <h1 className={cn(styles.headerPer, { [styles.changeColor]: props.state})}>PER</h1>
         </div>
-        <div className={styles.slider}>
+        <div className={cn(styles.slider, { [styles.changeColor]: props.state})}>
           <ul className={styles.list}>
             {listGenerator}
           </ul>
         </div>
-        <h1 className={styles.headerLastName}>RAGANKIEWICZ</h1>
+        <h1 className={cn(styles.headerLastName, { [styles.changeColor]: props.state})}>RAGANKIEWICZ</h1>
         <span className={cn(styles.arrow, { [styles.onBottom]: onBottom})} onClick={() => ScrollToBottom()}>
           <Image
             src={arrow}

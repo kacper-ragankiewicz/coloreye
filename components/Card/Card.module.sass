@@ -8,8 +8,10 @@
     flex-direction: column
     height: 100vh
     position: relative
+    &.changeColor
+        background: #FF7000
 
-.header
+.headerKac
     padding: 0px
     margin: 0px
     letter-spacing: .4rem
@@ -17,11 +19,40 @@
     font-size: 9rem
     font-family: 'Beckman', 'sans-serif'
     font-weight: 400
+    animation: kac .4s linear
+    z-index: 0
     +main.d
         font-size: 6rem
         letter-spacing: .2rem
     +main.m
         font-size: 7rem
+    &.changeColor
+        color: #000
+
+.headerPer
+    padding: 0px
+    margin: 0px
+    letter-spacing: .4rem
+    z-index: 10
+    font-size: 9rem
+    font-family: 'Beckman', 'sans-serif'
+    font-weight: 400
+    animation: per .4s linear
+    z-index: 0
+    +main.d
+        font-size: 6rem
+        letter-spacing: .2rem
+    +main.m
+        font-size: 7rem
+    &.changeColor
+        color: #000
+
+@keyframes kac
+    0%
+        transform: translate3d(100%, 0, 0)
+@keyframes per
+    0%
+        transform: translate3d(-100%, 0, 0)
 
 .headerLastName
     padding: 0px
@@ -34,12 +65,22 @@
     font-size: 9rem
     font-family: 'Beckman', 'sans-serif'
     font-weight: 400
+    animation: ragan .4s linear
+    z-index: 0
     +main.d
         font-size: 6rem
         letter-spacing: .2rem
     +main.m
         margin-top: 10px
         font-size: 1.4rem
+    &.changeColor
+        color: #000
+
+@keyframes ragan
+    0%
+        transform: translate3d(0, -100%, 0)
+        color: #000
+
 
 .animations
     width: 100%
@@ -65,6 +106,7 @@
     
 
 .eyeBox
+    z-index: 1
     cursor: pointer
     width: 100%
     background: #fff
@@ -89,9 +131,10 @@
     +main.m
         width: 80%
         min-height: 90px
-    &.eyeBlink
-        animation: none
-        box-shadow: none
+    &.changeColor
+        background: #000
+        +main.d
+            height: 6vh
 
 
 @keyframes blink
@@ -113,10 +156,9 @@
     background: #10A19D
     z-index: 100
     animation: blinkBraw 5s infinite
-    &.eyeBlink
-        transform: translateY(0)
-        animation: none
-        border-bottom: 50px solid #000000
+    &.changeColor
+        background: #ff6f00
+        border-bottom: 50px solid #000
         position: absolute
 
 @keyframes blinkBraw
@@ -151,6 +193,29 @@
         height: 120px
         width: 120px
         border: 3px solid #0f0f0f
+    &.changeColor
+        overflow: hidden
+        z-index: 10
+        border: 7px solid #0f0f0f
+        top: -60px
+        background: #FF7000
+        height: 250px
+        transition: transform .2s ease
+        width: 250px
+        border-radius: 50%
+        position: absolute
+        display: flex
+        justify-content: center
+        align-items: center
+        +main.d
+            height: 160px
+            width: 120px
+            top: -30px
+        +main.m
+            top: -10px
+            height: 120px
+            width: 120px
+            border: 3px solid #fff
 
 .eyePoint
     background: #0e0e0e
@@ -172,8 +237,11 @@
         -webkit-box-shadow: 0px 0px 12px 6px #42445a6b
         -moz-box-shadow: 0px 0px 12px 6px #42445a6b
         box-shadow: 0px 0px 12px 12px #42445a6b
+    &.changeColor
+        height: 90%
 
 .slider
+    z-index: 1
     color: #10A19D
     width: 100%
     margin: 60px 0px
@@ -192,6 +260,8 @@
         margin: 10px 0px
         width: 80%
         min-height: 90px
+    &.changeColor
+        background: #fff
 
 %list
     font-size: 1.8rem
@@ -235,6 +305,10 @@
         padding: 0px 5vw
     +main.m
         padding: 0px 3vw
+    &.changeColor
+        color: #ff6f00
+        &:before
+            background: #ff6f00
     &:before
         content: " "
         width: 13px

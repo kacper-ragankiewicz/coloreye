@@ -14,7 +14,7 @@ interface states {
   activeIndex: number;
 }
 
-export const Options = () => {
+export const Options = (props: any) => {
   const [active, setActive] = useState<states>({ activeIndex: 0})
   const [saved, setSaved] = useState(false)
 
@@ -143,7 +143,7 @@ export const Options = () => {
   }
 
   return (
-    <div className={styles.container}>
+    <div className={cn(styles.container, { [styles.changeColor]: props.state})}>
       <OutsideAlerter
         state={active.activeIndex === 0 ? false : true}
         change={() => setActive({ activeIndex: 0})}
