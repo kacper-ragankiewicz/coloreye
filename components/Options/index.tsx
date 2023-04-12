@@ -86,7 +86,7 @@ export const Options = (props: any) => {
 
   const ProjectGenerator = (props: any) => {
 
-    const techList = props.tech.map((item: any) => <li key={item}>{item}</li>)
+    const techList = props.tech.map((item: any) => <li className={cn(styles.techListElement, { [styles.changeColor]: props.state})} key={item}>{item}</li>)
 
     
     
@@ -96,12 +96,12 @@ export const Options = (props: any) => {
         <Link className={styles.link} href={props.url ? props.url : '#'}>
           <div className={styles.headerContainer}>
             <h2 className={styles.itemHeader}>{props.name}</h2>
-            <p className={styles.itemDescription}>{props.desc}</p>
+            <p className={cn(styles.itemDescription, { [styles.changeColor]: props.state})}>{props.desc}</p>
             <ul className={styles.techList}>
               {techList}
             </ul>
           </div>
-            <div className={styles.projectImage}>
+            <div className={cn(styles.projectImage, { [styles.changeColor]: props.state})}>
               <Image
                 src={props.img}
                 width={300}
@@ -126,7 +126,7 @@ export const Options = (props: any) => {
       </li>
     )
   }
-  const projectsList = projectsArrey.map(item => <ProjectGenerator key={item} {...item} />)
+  const projectsList = projectsArrey.map(item => <ProjectGenerator key={item} {...item} state={props.state}/>)
   const ScrollToBottom = (activeIndex: number) => {
 
     setActive({ activeIndex: activeIndex})
