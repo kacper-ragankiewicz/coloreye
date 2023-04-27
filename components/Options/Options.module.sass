@@ -83,11 +83,17 @@
     overflow: hidden
     transition: transform 1.5s ease
     min-width: 400px
+    animation: fadeIn .5s linear
     +main.m
         min-width: 300px
     &:hover
         .projectImage
             filter: grayscale(100%) blur(10px)
+
+@keyframes fadeIn
+    0%
+        opacity: 0
+        transform: translate3d(100%, 0, 0)
 
 .itemContainer a
     width: 100%

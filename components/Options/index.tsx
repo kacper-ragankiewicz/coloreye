@@ -107,6 +107,8 @@ export const Options = (props: any) => {
                 width={300}
                 height={700}
                 alt='Project IMG'
+                placeholder='blur'
+                blurDataURL='../../public/chiptree.png'
                 priority
               />
             </div>
