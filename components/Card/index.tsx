@@ -16,15 +16,15 @@ export const Card = (props: any) => {
   const [onBottom, setOnBottom] = useState(false);
 
   const listArrey = [
-    'GRAPHIC Designer',
+    'SOFTWARE Designer',
     'Problem Solver',
     'Strategic thinker',
     'Team player',
-    'GRAPHIC Designer',
+    'SOFTWARE Designer',
     'Problem Solver',
     'Strategic thinker',
     'Team player',
-    'GRAPHIC Designer',
+    'SOFTWARE Designer',
     'Problem Solver',
     'Strategic thinker',
     'Team player'
