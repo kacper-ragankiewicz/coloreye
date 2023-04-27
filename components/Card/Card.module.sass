@@ -19,7 +19,7 @@
     font-size: 9rem
     font-family: 'Beckman', 'sans-serif'
     font-weight: 400
-    animation: kac .4s linear
+    animation: .4s ease 0s normal forwards 1 kac
     z-index: 0
     +main.d
         font-size: 6rem
@@ -38,7 +38,7 @@
     font-size: 9rem
     font-family: 'Beckman', 'sans-serif'
     font-weight: 400
-    animation: per .4s linear
+    animation: .4s ease 0s normal forwards 1 per
     z-index: 0
     +main.d
         font-size: 6rem
@@ -52,9 +52,12 @@
 @keyframes kac
     0%
         transform: translate3d(100%, 0, 0)
+
 @keyframes per
     0%
         transform: translate3d(-100%, 0, 0)
+
+
 @keyframes kacColor
     0%
         transform: translate3d(100%, 0, 0)
