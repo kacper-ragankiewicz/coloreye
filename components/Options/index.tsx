@@ -21,7 +21,7 @@ export const Options = (props: any) => {
   const projectsArrey = [
     {
       name: 'ChipTree',
-      desc: 'Interface for IOT',
+      desc: 'The IoT devices',
       tech: ['Next', 'Node', 'PostgreSQL', 'Firebase'],
       img: 'https://live.staticflickr.com/65535/52807396473_5b4889ae66_b.jpg',
       url: 'https://chiptree.pl'
