@@ -12,10 +12,6 @@ body {
   -webkit-font-smoothing: subpixel-antialiased !important;
 }
 
-::-webkit-scrollbar {
-  width: 0px;
-}
-
 h1 {
   font-size: 7rem;
   font-weight: 300;
