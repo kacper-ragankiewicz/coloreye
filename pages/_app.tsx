@@ -5,7 +5,7 @@ import Script from 'next/script'
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
-      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-F45FND07N4"></Script>
+      <Script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALITICS}`}></Script>
       <Script
           id='google-analytics'
           strategy="afterInteractive"
@@ -14,7 +14,7 @@ export default function App({ Component, pageProps }: AppProps) {
                   window.dataLayer = window.dataLayer || [];
                   function gtag(){dataLayer.push(arguments);}
                   gtag('js', new Date());
-                  gtag('config', 'G-F45FND07N4');
+                  gtag('config', ${process.env.NEXT_PUBLIC_GOOGLE_ANALITICS});
               `,
     }}
     />
