@@ -1,3 +1,9 @@
+## Auto code review
+
+[![codebeat badge](https://codebeat.co/badges/2f8f7d87-ee74-4a81-8f58-c328d77f2911)](https://codebeat.co/projects/github-com-kacper-ragankiewicz-coloreye-main)
+
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/1e218163f6814fb0a5ed6dbc7501bd32)](https://app.codacy.com/gh/kacper-ragankiewicz/coloreye/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
