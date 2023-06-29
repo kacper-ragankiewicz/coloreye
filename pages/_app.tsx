@@ -1,6 +1,9 @@
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
 import Script from 'next/script'
+import { DefaultSeo } from 'next-seo';
+
+import SEO from '../next-seo.config';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -14,12 +17,14 @@ export default function App({ Component, pageProps }: AppProps) {
                   window.dataLayer = window.dataLayer || [];
                   function gtag(){dataLayer.push(arguments);}
                   gtag('js', new Date());
-                  gtag('config', ${process.env.NEXT_PUBLIC_GOOGLE_ANALITICS});
+                  gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALITICS}');
               `,
     }}
     />
-        <Component {...pageProps} />
+        <>
+            <DefaultSeo {...SEO}/>
+            <Component {...pageProps} />
+        </>
     </>
     )
-    
 }
